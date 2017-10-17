@@ -16,3 +16,12 @@ C:\Users\kevin\Desktop\ServerApplicatie\ClientApplicatie\obj\Debug\ClientApplica
 C:\Users\kevin\Desktop\ServerApplicatie\ClientApplicatie\obj\Debug\ClientApplicatie.csproj.CoreCompileInputs.cache
 C:\Users\kevin\Desktop\ServerApplicatie\ClientApplicatie\obj\Debug\ClientApplicatie.exe
 C:\Users\kevin\Desktop\ServerApplicatie\ClientApplicatie\obj\Debug\ClientApplicatie.pdb
+D:\School\2.1CSharpOpdracht\ClientApplicatie\bin\Debug\ClientApplicatie.exe.config
+D:\School\2.1CSharpOpdracht\ClientApplicatie\bin\Debug\ClientApplicatie.exe
+D:\School\2.1CSharpOpdracht\ClientApplicatie\bin\Debug\ClientApplicatie.pdb
+D:\School\2.1CSharpOpdracht\ClientApplicatie\bin\Debug\PacketLibrary.dll
+D:\School\2.1CSharpOpdracht\ClientApplicatie\bin\Debug\PacketLibrary.pdb
+D:\School\2.1CSharpOpdracht\ClientApplicatie\obj\Debug\ClientApplicatie.csprojResolveAssemblyReference.cache
+D:\School\2.1CSharpOpdracht\ClientApplicatie\obj\Debug\ClientApplicatie.csproj.CoreCompileInputs.cache
+D:\School\2.1CSharpOpdracht\ClientApplicatie\obj\Debug\ClientApplicatie.exe
+D:\School\2.1CSharpOpdracht\ClientApplicatie\obj\Debug\ClientApplicatie.pdb

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{58AF835A-C51A-471A-88BA-8BD1D5CD7C44}</ProjectGuid>
+    <ProjectGuid>{3A344B8A-EB32-485F-85D1-08E3B607DD18}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Launcher</RootNamespace>
     <AssemblyName>Launcher</AssemblyName>
@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +57,10 @@
     <ProjectReference Include="..\ServerApplicatie\ServerApplicatie.csproj">
       <Project>{DABE390D-117F-4176-9A04-48A557F9E477}</Project>
       <Name>ServerApplicatie</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsFormsApp1\ClientForm.csproj">
+      <Project>{CC9976F4-8159-444B-A0EE-6CFAAA2A85D1}</Project>
+      <Name>ClientForm</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

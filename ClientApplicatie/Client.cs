@@ -8,6 +8,8 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Runtime.Serialization.Formatters.Binary;
 using PacketLibrary;
+using System.Windows.Forms;
+
 
 namespace ClientApplicatie
 {
@@ -15,12 +17,12 @@ namespace ClientApplicatie
     {
         private GameState gameState;
         private int playerNumber;
-
+       
         static void Main(string[] args)
         {
-            new Client();
+            //new Client();
         }
-        
+
 
         public Client()
         {
@@ -32,7 +34,7 @@ namespace ClientApplicatie
             gameState = formatter.Deserialize(client.GetStream()) as GameState;
             playerNumber = gameState.Player.PlayerNumber;
             //gameState.Player.Hand.ForEach(x => Console.WriteLine(x));
-
+            
             while (!closeConnection)
             {
                 while (playerNumber == gameState.PlayerTurn)
@@ -47,9 +49,10 @@ namespace ClientApplicatie
                         {
                             Console.WriteLine("Its your turn opponent has " + gameState.CardsAtOtherPlayer + " cards in hand " +
                            "\nCard on pile is " + gameState.Pile[gameState.Pile.Count - 1]);
-                            string response = Console.ReadLine();
-                            int handnumber = Int32.Parse(response);
-                            SharedMethods.SendPacket(client, gameState.Player.Hand[handnumber]);
+                            //string response = Console.ReadLine();
+                            //int handnumber = Int32.Parse(response);
+                            //SharedMethods.SendPacket(client, gameState.Player.Hand[handnumber]);
+
                             gameState = formatter.Deserialize(client.GetStream()) as GameState;
 
                         }
@@ -65,7 +68,6 @@ namespace ClientApplicatie
                 }
                 gameState = formatter.Deserialize(client.GetStream()) as GameState;
             }
-
         }
     }
 }

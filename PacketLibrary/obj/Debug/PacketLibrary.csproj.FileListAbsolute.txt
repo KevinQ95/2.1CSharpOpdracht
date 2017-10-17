@@ -9,3 +9,8 @@ C:\Users\kevin\Desktop\ServerApplicatie\PacketLibrary\bin\Debug\PacketLibrary.pd
 C:\Users\kevin\Desktop\ServerApplicatie\PacketLibrary\obj\Debug\PacketLibrary.csproj.CoreCompileInputs.cache
 C:\Users\kevin\Desktop\ServerApplicatie\PacketLibrary\obj\Debug\PacketLibrary.dll
 C:\Users\kevin\Desktop\ServerApplicatie\PacketLibrary\obj\Debug\PacketLibrary.pdb
+D:\School\2.1CSharpOpdracht\PacketLibrary\bin\Debug\PacketLibrary.dll
+D:\School\2.1CSharpOpdracht\PacketLibrary\bin\Debug\PacketLibrary.pdb
+D:\School\2.1CSharpOpdracht\PacketLibrary\obj\Debug\PacketLibrary.csproj.CoreCompileInputs.cache
+D:\School\2.1CSharpOpdracht\PacketLibrary\obj\Debug\PacketLibrary.dll
+D:\School\2.1CSharpOpdracht\PacketLibrary\obj\Debug\PacketLibrary.pdb

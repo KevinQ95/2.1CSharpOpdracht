@@ -11,11 +11,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApplicatie", "ClientA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacketLibrary", "PacketLibrary\PacketLibrary.csproj", "{AC7C59EB-5172-444A-BE2E-FB4AC01BAA12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "Launcher\Launcher.csproj", "{3A344B8A-EB32-485F-85D1-08E3B607DD18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientForm", "WindowsFormsApp1\ClientForm.csproj", "{CC9976F4-8159-444B-A0EE-6CFAAA2A85D1}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		SharedProjectServerClient\SharedProjectServerClient.projitems*{1ff52819-b841-453f-8c45-2f3c5aab1f46}*SharedItemsImports = 4
 		SharedProjectServerClient\SharedProjectServerClient.projitems*{ac7c59eb-5172-444a-be2e-fb4ac01baa12}*SharedItemsImports = 4
 		SharedProjectServerClient\SharedProjectServerClient.projitems*{b0944ff0-688e-40b6-bffb-7225a0a8e2a4}*SharedItemsImports = 13
+		SharedProjectServerClient\SharedProjectServerClient.projitems*{cc9976f4-8159-444b-a0ee-6cfaaa2a85d1}*SharedItemsImports = 4
 		SharedProjectServerClient\SharedProjectServerClient.projitems*{dabe390d-117f-4176-9a04-48a557f9e477}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +40,14 @@ Global
 		{AC7C59EB-5172-444A-BE2E-FB4AC01BAA12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC7C59EB-5172-444A-BE2E-FB4AC01BAA12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC7C59EB-5172-444A-BE2E-FB4AC01BAA12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A344B8A-EB32-485F-85D1-08E3B607DD18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A344B8A-EB32-485F-85D1-08E3B607DD18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A344B8A-EB32-485F-85D1-08E3B607DD18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A344B8A-EB32-485F-85D1-08E3B607DD18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC9976F4-8159-444B-A0EE-6CFAAA2A85D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC9976F4-8159-444B-A0EE-6CFAAA2A85D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC9976F4-8159-444B-A0EE-6CFAAA2A85D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC9976F4-8159-444B-A0EE-6CFAAA2A85D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

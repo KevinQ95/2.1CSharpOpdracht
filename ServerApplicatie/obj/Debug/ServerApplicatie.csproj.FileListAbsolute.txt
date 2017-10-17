@@ -16,3 +16,12 @@ C:\Users\kevin\Desktop\ServerApplicatie\ServerApplicatie\obj\Debug\ServerApplica
 C:\Users\kevin\Desktop\ServerApplicatie\ServerApplicatie\obj\Debug\ServerApplicatie.csproj.CoreCompileInputs.cache
 C:\Users\kevin\Desktop\ServerApplicatie\ServerApplicatie\obj\Debug\ServerApplicatie.exe
 C:\Users\kevin\Desktop\ServerApplicatie\ServerApplicatie\obj\Debug\ServerApplicatie.pdb
+D:\School\2.1CSharpOpdracht\ServerApplicatie\bin\Debug\ServerApplicatie.exe.config
+D:\School\2.1CSharpOpdracht\ServerApplicatie\bin\Debug\ServerApplicatie.exe
+D:\School\2.1CSharpOpdracht\ServerApplicatie\bin\Debug\ServerApplicatie.pdb
+D:\School\2.1CSharpOpdracht\ServerApplicatie\bin\Debug\PacketLibrary.dll
+D:\School\2.1CSharpOpdracht\ServerApplicatie\bin\Debug\PacketLibrary.pdb
+D:\School\2.1CSharpOpdracht\ServerApplicatie\obj\Debug\ServerApplicatie.csprojResolveAssemblyReference.cache
+D:\School\2.1CSharpOpdracht\ServerApplicatie\obj\Debug\ServerApplicatie.csproj.CoreCompileInputs.cache
+D:\School\2.1CSharpOpdracht\ServerApplicatie\obj\Debug\ServerApplicatie.exe
+D:\School\2.1CSharpOpdracht\ServerApplicatie\obj\Debug\ServerApplicatie.pdb
