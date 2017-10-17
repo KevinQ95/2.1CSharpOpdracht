@@ -1,0 +1,15 @@
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\bin\Debug\Launcher.exe.config
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\bin\Debug\Launcher.exe
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\bin\Debug\Launcher.pdb
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\bin\Debug\ClientApplicatie.exe
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\bin\Debug\ServerApplicatie.exe
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\bin\Debug\PacketLibrary.dll
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\bin\Debug\ClientApplicatie.pdb
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\bin\Debug\ClientApplicatie.exe.config
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\bin\Debug\ServerApplicatie.pdb
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\bin\Debug\ServerApplicatie.exe.config
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\bin\Debug\PacketLibrary.pdb
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\obj\Debug\Launcher.csprojResolveAssemblyReference.cache
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\obj\Debug\Launcher.csproj.CoreCompileInputs.cache
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\obj\Debug\Launcher.exe
+C:\Users\kevin\Desktop\ServerApplicatie\Launcher\obj\Debug\Launcher.pdb
