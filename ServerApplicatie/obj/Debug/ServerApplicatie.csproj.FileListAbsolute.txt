@@ -25,3 +25,12 @@ D:\School\2.1CSharpOpdracht\ServerApplicatie\obj\Debug\ServerApplicatie.csprojRe
 D:\School\2.1CSharpOpdracht\ServerApplicatie\obj\Debug\ServerApplicatie.csproj.CoreCompileInputs.cache
 D:\School\2.1CSharpOpdracht\ServerApplicatie\obj\Debug\ServerApplicatie.exe
 D:\School\2.1CSharpOpdracht\ServerApplicatie\obj\Debug\ServerApplicatie.pdb
+C:\PestServer\ServerApplicatie\bin\Debug\ServerApplicatie.exe.config
+C:\PestServer\ServerApplicatie\bin\Debug\ServerApplicatie.exe
+C:\PestServer\ServerApplicatie\bin\Debug\ServerApplicatie.pdb
+C:\PestServer\ServerApplicatie\bin\Debug\PacketLibrary.dll
+C:\PestServer\ServerApplicatie\bin\Debug\PacketLibrary.pdb
+C:\PestServer\ServerApplicatie\obj\Debug\ServerApplicatie.csprojResolveAssemblyReference.cache
+C:\PestServer\ServerApplicatie\obj\Debug\ServerApplicatie.csproj.CoreCompileInputs.cache
+C:\PestServer\ServerApplicatie\obj\Debug\ServerApplicatie.exe
+C:\PestServer\ServerApplicatie\obj\Debug\ServerApplicatie.pdb

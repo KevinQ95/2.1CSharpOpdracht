@@ -14,3 +14,8 @@ D:\School\2.1CSharpOpdracht\PacketLibrary\bin\Debug\PacketLibrary.pdb
 D:\School\2.1CSharpOpdracht\PacketLibrary\obj\Debug\PacketLibrary.csproj.CoreCompileInputs.cache
 D:\School\2.1CSharpOpdracht\PacketLibrary\obj\Debug\PacketLibrary.dll
 D:\School\2.1CSharpOpdracht\PacketLibrary\obj\Debug\PacketLibrary.pdb
+C:\PestServer\PacketLibrary\bin\Debug\PacketLibrary.dll
+C:\PestServer\PacketLibrary\bin\Debug\PacketLibrary.pdb
+C:\PestServer\PacketLibrary\obj\Debug\PacketLibrary.csproj.CoreCompileInputs.cache
+C:\PestServer\PacketLibrary\obj\Debug\PacketLibrary.dll
+C:\PestServer\PacketLibrary\obj\Debug\PacketLibrary.pdb

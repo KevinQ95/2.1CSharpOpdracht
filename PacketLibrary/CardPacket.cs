@@ -23,7 +23,7 @@ namespace PacketLibrary
 
         public override string ToString()
         {
-            return CardValue + " of " + CardType;
+            return CardValue.ToLower() + "_of_" + CardType.ToString().ToLower();
         }
     }
 }
