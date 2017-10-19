@@ -14,6 +14,13 @@ namespace PacketLibrary
         public CardTypes CardType { get; set; }
         public string CardValue { get; set; }
 
+        public CardPacket() : base()
+        {
+            PacketName = "CardPacket";
+            CardType = CardTypes.CLUBS;
+            CardValue = "Fake";
+        }
+
         public CardPacket(CardTypes cardType, string cardValue) : base()
         {
             PacketName = "CardPacket";

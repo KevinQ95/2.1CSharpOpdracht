@@ -49,7 +49,7 @@ namespace ServerApplicatie
             }
 
         }
-        
+
         public void HandleClientThread(Object o)
         {
             TcpClient client = o as TcpClient;
@@ -70,14 +70,6 @@ namespace ServerApplicatie
             TcpClient client2 = o2 as TcpClient;
             SetupGame(client1, client2);
 
-            //Console.WriteLine("Player 1 Hand");
-            //game.Player1.Hand.ForEach(x => Console.WriteLine(x));
-            //Console.WriteLine("Player 2 Hand");
-            //game.Player2.Hand.ForEach(x => Console.WriteLine(x));
-
-            //Console.WriteLine("Deck left " + game.Deck.Count);
-            //game.Deck.ForEach(x => Console.WriteLine(x));
-
             while (true)
             {
                 Packet packet = new Packet();
@@ -85,7 +77,6 @@ namespace ServerApplicatie
                     packet = serializer.Deserialize(client1.GetStream()) as Packet;
                 else
                     packet = serializer.Deserialize(client2.GetStream()) as Packet;
-
 
                 Console.WriteLine("Received " + packet.PacketName);
 
@@ -179,36 +170,9 @@ namespace ServerApplicatie
                             SharedMethods.SendPacket(client1, new GameState(game.Player1, game.Player2.Hand.Count, game.PlayerTurn, game.Deck, game.Pile));
                             SharedMethods.SendPacket(client2, new GameState(game.Player2, game.Player1.Hand.Count, game.PlayerTurn, game.Deck, game.Pile));
                         }
-
                         break;
                 }
             }
-
-            //packet = serializer.Deserialize(client2.GetStream()) as Packet;
-
-            //switch (packet.PacketName)
-            //{
-            //    case "CardPacket":
-            //        CardPacket cardPacket2 = packet as CardPacket;
-            //        game.PlayerTurn = 1;
-            //        game.Player2.RemoveCardFromHand(cardPacket2);
-            //        game.Pile.Add(cardPacket2);
-            //        SharedMethods.SendPacket(client2, new GameState(game.Player2, game.Player1.Hand.Count, game.PlayerTurn, game.Deck, game.Pile));
-            //        SharedMethods.SendPacket(client1, new GameState(game.Player1, game.Player2.Hand.Count, game.PlayerTurn, game.Deck, game.Pile));
-
-            //        break;
-            //    case "DrawCardPacket":
-            //        DrawCardPacket drawCard = packet as DrawCardPacket;
-            //        game.PlayerTurn = 1;
-            //        game.Player2.Hand.Add(game.Deck[0]);
-            //        game.Deck.Remove(game.Deck[0]);
-            //        SharedMethods.SendPacket(client1, new GameState(game.Player2, game.Player1.Hand.Count, game.PlayerTurn, game.Deck, game.Pile));
-            //        SharedMethods.SendPacket(client2, new GameState(game.Player1, game.Player2.Hand.Count, game.PlayerTurn, game.Deck, game.Pile));
-
-            //        break;
-            //    }
-
-            //}
         }
 
         private void SetupGame(TcpClient o1, TcpClient o2)

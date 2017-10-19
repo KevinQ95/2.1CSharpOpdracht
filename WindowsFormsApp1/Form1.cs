@@ -26,10 +26,13 @@ namespace ClientForm
         delegate void updateOppentCard(PictureBox cb);
         delegate void updateStackTop(PictureBox cb);
         delegate void updateDeckLeft(int amount);
+        delegate void clearAll();
+        delegate void stateCardsPanel(bool value);
         private GameState gameState;
         private int playerNumber;
         BinaryFormatter formatter;
-        TcpClient client;
+        static TcpClient client;
+        static int index = -1;
 
         public Form1()
         {
@@ -45,22 +48,16 @@ namespace ClientForm
 
                 gameState = formatter.Deserialize(client.GetStream()) as GameState;
                 playerNumber = gameState.Player.PlayerNumber;
-                //gameState.Player.Hand.ForEach(x => Console.WriteLine(x));
-                string hand = "";
-                gameState.Player.Hand.ForEach(x => hand += x.ToString() + " ");
-                UpdateLabel1(hand);
-                UpdateLabel2(gameState.CardsAtOtherPlayer.ToString());
                 UpdateBoardState();
-                Thread refreshGameState = new Thread(UpdateGameState);
-                refreshGameState.Start();
-
-
+                UpdatePlayerNumberLabel(gameState.Player.PlayerNumber.ToString());
+                EnableCardsPanel(false);
 
                 while (!closeConnection)
                 {
                     while (playerNumber == gameState.PlayerTurn)
                     {
                         gameState.Player.Hand.ForEach(x => Console.WriteLine(x));
+                        EnableCardsPanel(true);
 
                         if (gameState.Player.Hand.Count == 0)
                             Console.WriteLine("You win");
@@ -70,12 +67,17 @@ namespace ClientForm
                             {
                                 Console.WriteLine("Its your turn opponent has " + gameState.CardsAtOtherPlayer + " cards in hand " +
                                "\nCard on pile is " + gameState.Pile[gameState.Pile.Count - 1]);
-                                //string response = Console.ReadLine();
-                                //int handnumber = Int32.Parse(response);
-                                //SharedMethods.SendPacket(client, gameState.Player.Hand[handnumber]);
 
+                                while (index == -1)
+                                {
+
+                                }
+
+                                SharedMethods.SendPacket(client, gameState.Player.Hand[index]);
                                 gameState = formatter.Deserialize(client.GetStream()) as GameState;
-
+                                UpdateBoardState();
+                                index = -1;
+                                EnableCardsPanel(false);
                             }
                             else
                             {
@@ -83,21 +85,19 @@ namespace ClientForm
                                "\nCard on pile is " + gameState.Pile[gameState.Pile.Count - 1] + "\nYou dont have a playable card");
                                 SharedMethods.SendPacket(client, new DrawCardPacket());
                                 gameState = formatter.Deserialize(client.GetStream()) as GameState;
+                                UpdateBoardState();
+                                index = -1;
+                                EnableCardsPanel(false);
                             }
                         }
                     }
-                   // gameState = formatter.Deserialize(client.GetStream()) as GameState;
+                    gameState = formatter.Deserialize(client.GetStream()) as GameState;
+                    UpdateBoardState();
                 }
             }).Start();
-          
+
         }
 
-
-
-        public void UpdateGameState()
-        {
-            gameState = formatter.Deserialize(client.GetStream()) as GameState;
-        }
 
         public void UpdateLabel1(string text)
         {
@@ -108,6 +108,29 @@ namespace ClientForm
             }
             else
                 _Label1.Text = $"{text} of cards in hand";
+        }
+
+        public void UpdatePlayerNumberLabel(string text)
+        {
+            if (_playerNumber.InvokeRequired)
+            {
+                SetTextCallback d = new SetTextCallback(UpdatePlayerNumberLabel);
+                Invoke(d, new object[] { text });
+            }
+            else
+                _playerNumber.Text = "Player : " + text;
+
+        }
+
+        public void EnableCardsPanel(bool value)
+        {
+            if (CardsPanel.InvokeRequired)
+            {
+                stateCardsPanel d = new stateCardsPanel(EnableCardsPanel);
+                Invoke(d, new object[] { value });
+            }
+            else
+                CardsPanel.Enabled = value;
         }
 
         public void UpdateCardsPanel(CustomButton cb)
@@ -121,7 +144,41 @@ namespace ClientForm
                 CardsPanel.Controls.Add(cb);
         }
 
+        public void ClearEverything()
+        {
+            if (CardsPanel.InvokeRequired)
+            {
+                clearAll d = new clearAll(ClearEverything);
+                Invoke(d, new object[] { });
+            }
+            else
+                CardsPanel.Controls.Clear();
 
+            if (OpponentCardsPanel.InvokeRequired)
+            {
+                clearAll d = new clearAll(ClearEverything);
+                Invoke(d, new object[] { });
+            }
+            else
+                OpponentCardsPanel.Controls.Clear();
+
+            if (_Label1.InvokeRequired)
+            {
+                clearAll d = new clearAll(ClearEverything);
+                Invoke(d, new object[] { });
+            }
+            else
+                _Label1.Controls.Clear();
+
+            if (TopStack.InvokeRequired)
+            {
+                clearAll d = new clearAll(ClearEverything);
+                Invoke(d, new object[] { });
+            }
+            else
+                TopStack.Controls.Clear();
+
+        }
 
         public void UpdateOpponentCardsPanel(PictureBox pb)
         {
@@ -143,66 +200,63 @@ namespace ClientForm
             }
             else { _Label1.Text = amount + " Cards left"; }
         }
-        
 
-        public void updateTopCard(PictureBox pb)
+
+        public void UpdateTopCard(PictureBox pb)
         {
             if (TopStack.InvokeRequired)
             {
-                updateStackTop d = new updateStackTop(updateTopCard);
+                updateStackTop d = new updateStackTop(UpdateTopCard);
                 Invoke(d, new object[] { pb });
             }
             else
                 TopStack.Controls.Add(pb);
         }
 
-
-        public void UpdateLabel2(string text)
+        public static void SendCardToServer(int i)
         {
-            if (_Label2.InvokeRequired)
-            {
-                SetTextCallback d = new SetTextCallback(UpdateLabel2);
-                Invoke(d, new object[] { text });
-            }
-            else
-                _Label2.Text = $"{text} of cards in hand";
+            index = i;
         }
 
         public void UpdateBoardState()
         {
-            //OpponentCardsPanel.Controls.Clear();
+            ClearEverything();
             Image image = Image.FromFile(Path.Combine(Environment.CurrentDirectory, @"Cards\cardback.png"));
+
             for (int i = 0; i < gameState.CardsAtOtherPlayer; i++)
             {
-                PictureBox pbhand = new PictureBox();
-                pbhand.SizeMode = PictureBoxSizeMode.Zoom;
-                pbhand.Size = new Size(CustomButton.size.Width, CustomButton.size.Height);
-
-                pbhand.Image = image;
+                PictureBox pbhand = new PictureBox
+                {
+                    SizeMode = PictureBoxSizeMode.Zoom,
+                    Size = new Size(67, 100),
+                    Image = image
+                };
 
 
                 UpdateOpponentCardsPanel(pbhand);
             }
 
-            // CardsPanel.Controls.Clear();
             for (int i = 0; i < gameState.Player.Hand.Count; i++)
             {
-                CustomButton cb = new CustomButton();
-                cb.index = i;
-                var bm = new Bitmap(Image.FromFile(Path.Combine(Environment.CurrentDirectory, @"Cards\" + gameState.Player.Hand[i].ToString() + ".png")), new Size(cb.Width, cb.Height));
+                CustomButton cb = new CustomButton
+                {
+                    Index = i
+                };
 
-                //b.Size = 
+                var bm = new Bitmap(Image.FromFile(Path.Combine(Environment.CurrentDirectory, @"Cards\" + gameState.Player.Hand[i].ToString() + ".png")), new Size(cb.Width, cb.Height));
                 cb.BackgroundImage = bm;
-                //cb.Location = new Point(i * 100, 0);
                 UpdateCardsPanel(cb);
             }
 
-            PictureBox pbStack = new PictureBox();
-            pbStack.SizeMode = PictureBoxSizeMode.Zoom;
-            pbStack.Size = new Size(CustomButton.size.Width, CustomButton.size.Height);
-            Image stacktop = Image.FromFile(Path.Combine(Environment.CurrentDirectory, @"Cards\" + gameState.Pile[gameState.Pile.Count-1] + ".png"));
+            PictureBox pbStack = new PictureBox
+            {
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Size = new Size(67, 100)
+            };
+
+            Image stacktop = Image.FromFile(Path.Combine(Environment.CurrentDirectory, @"Cards\" + gameState.Pile[gameState.Pile.Count - 1] + ".png"));
             pbStack.Image = stacktop;
-            updateTopCard(pbStack);
+            UpdateTopCard(pbStack);
             UpdateDeckAmount(gameState.Deck.Count);
         }
     }
